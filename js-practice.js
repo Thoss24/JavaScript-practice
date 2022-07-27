@@ -15,3 +15,19 @@ function getDateOnly() {
     console.log(newDate);
 }
 getDateOnly();
+
+// How to find area of a triangle
+function findAreaOf() {
+    const sideOne = parseInt(prompt(`Enter side 1`));
+    const sideTwo = parseInt(prompt(`Enter side 2`));
+    const sideThree = parseInt(prompt(`Enter side 3`));
+
+    const sides = (sideOne + sideTwo + sideThree) / 2;
+
+    const areaValue = Math.sqrt(sides * (sides - sideOne) * (sides - sideTwo) * (sides - sideThree));
+
+    console.log(`The area of this triangle is ${areaValue}`);
+}
+findAreaOf(); 
+
+
