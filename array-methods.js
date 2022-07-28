@@ -44,9 +44,16 @@ console.log(movies);
 movies.splice(0, 1)
 console.log(movies);
 
-// slice() slices out piece of array into new array
+// slice() slices out piece of array into new array, first argument is starting index, second is ending index non-inclusive.
 const piece = ["dog", "cat", "fish", "lizard"];
 const myPiece = piece.slice(1, 3);
 
 console.log(piece);
 console.log(myPiece);
+
+// toString() converts an array to a comma separated string.
+const arrayToString = new Array("hello", "there", "nice", "to", "meet", "you");
+const finalString = arrayToString.toString();
+console.log(arrayToString);
+console.log(finalString);
+
