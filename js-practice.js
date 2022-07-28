@@ -30,4 +30,13 @@ function findAreaOf() {
 }
 findAreaOf(); 
 
+// forEach() expected output "hello" "hell" repeated 4 times, equal in length to number of items in myArray
+let myArray = ["apple", "mango", "pear", "grape"];
+
+myArray.forEach(myFunction);
+
+function myFunction() {
+    console.log("Hello")
+    console.log("Hell")
+}
 
