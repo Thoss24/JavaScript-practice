@@ -5,8 +5,6 @@ function getTimeAndDate() {
 }
 getTimeAndDate();
 
-// How to print current window
-window.print();
 
 // How to get date dd/mm/yy format. Remember getMonth is 0 indexed so need + 1.
 function getDateOnly() {
@@ -33,6 +31,8 @@ findAreaOf();
 // forEach() expected output "hello" "hell" repeated 4 times, equal in length to number of items in myArray
 let myArray = ["apple", "mango", "pear", "grape"];
 
+
+
 myArray.forEach(myFunction);
 
 function myFunction() {
@@ -40,3 +40,10 @@ function myFunction() {
     console.log("Hell")
 }
 
+// new array both statements create a new array
+const newArray = [78, 60, 67, 49, 92, 85];
+const newArrayOne = new Array(30, 35, 25, 32, 13, 14);
+
+let type = typeof newArray; 
+console.log(type)
+console.log(myArray instanceof Array);
