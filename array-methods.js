@@ -57,3 +57,51 @@ const finalString = arrayToString.toString();
 console.log(arrayToString);
 console.log(finalString);
 
+// map() method will do something to each item in a collection. here the elements in array2 were changed to upper case.
+function toUpper(string) {
+    return string.toUpperCase();
+}
+
+const array2 = new Array("cat", "dog", "fish", "cow");
+const newCat = array2.map(toUpper);
+console.log(array2);
+console.log(newCat);
+
+// filter() similar to map() expect a boolean is returned, if true the item is included in the array. The result will be an array that only contains strings starting with "L" or any other chosen value.
+function filterL(tol) {
+    return tol.startsWith("L")
+}
+
+const filterString = new Array("leopard", "Lemur", "lion", "zebra", "elephant");
+const filterStringTwo = filterString.filter(filterL);
+
+console.log(filterString);
+console.log(filterStringTwo);
+
+// for loop
+const arrayLoop = new Array("hello", "there", "mr", "pants");
+
+for (let i = 0; i < arrayLoop.length; i++){
+    
+    console.log(arrayLoop[i])
+}
+
+// traditional for loop is useful if we want to alter each iteration or a single iteration like below.
+const cats = ["harry, ", " ed, ", " choco, ", " milk."];
+
+let favCat = "I love my cats, "
+
+for (let i = 0; i < cats.length; i++){
+    if (i === cats.length-1){
+        favCat += `and ${cats[i]}`
+    } else {
+        favCat += `${cats[i]}`
+    }
+}
+console.log(favCat)
+
+// for....of loop, is an easier way of iterating through an entire array the for loop ^ above, achieves the same result as the for...of.
+const alpha = new Array("a", "b", "c", "d");
+for (const bet of alpha){
+    console.log(bet)
+}
