@@ -36,4 +36,17 @@ const children = myGirls.concat(myBoys, myCats, "dog"); //concat() can also take
 
 console.log(children);
 
-//
+// splice() adds new elements to an array. first parameter is index to add new value, second parameter is the number of elements to remove.
+const movies = new Array("harry potter", "star wars", "lord of the rings");
+movies.splice(1, 0, "blade runner");
+console.log(movies);
+
+movies.splice(0, 1)
+console.log(movies);
+
+// slice() slices out piece of array into new array
+const piece = ["dog", "cat", "fish", "lizard"];
+const myPiece = piece.slice(1, 3);
+
+console.log(piece);
+console.log(myPiece);
