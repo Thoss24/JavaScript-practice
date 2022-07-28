@@ -27,4 +27,13 @@ console.log(animals);
 delete(animals[4]);
 console.log(animals);  // "chicken" has now been deleted
 
+// concat() merges existing arrays, does not change existing arrays.
+const myGirls = new Array("hannah", "sarah");
+const myBoys = ["andrew", "harry"];
+const myCats = new Array("blue", "smudge")
+
+const children = myGirls.concat(myBoys, myCats, "dog"); //concat() can also take strings as arguments.
+
+console.log(children);
+
 //
