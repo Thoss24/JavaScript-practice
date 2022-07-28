@@ -31,8 +31,6 @@ findAreaOf();
 // forEach() expected output "hello" "hell" repeated 4 times, equal in length to number of items in myArray
 let myArray = ["apple", "mango", "pear", "grape"];
 
-
-
 myArray.forEach(myFunction);
 
 function myFunction() {
@@ -44,6 +42,17 @@ function myFunction() {
 const newArray = [78, 60, 67, 49, 92, 85];
 const newArrayOne = new Array(30, 35, 25, 32, 13, 14);
 
+
+// instanceof return true if an object is created by given constructor
+// typeof newArray will return object because a JavaScript array is an object
 let type = typeof newArray; 
 console.log(type)
 console.log(myArray instanceof Array);
+
+
+// toString()
+const fruit = ["banana", "apple", "orange", "pear"];
+console.log(fruit.toString())
+console.log(fruit)
+
+
