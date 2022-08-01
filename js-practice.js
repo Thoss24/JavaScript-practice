@@ -55,4 +55,15 @@ const fruit = ["banana", "apple", "orange", "pear"];
 console.log(fruit.toString())
 console.log(fruit)
 
+// loop which prints content of array inside a list. createElement method was used to create the <li> element and append it to the pre-defined <ul> element. The value of each iteration of array was assigned to the <li> element and printed.
+const myArrayTwo = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+const list = document.createElement('ul');
+
+for (const x in myArrayTwo){
+    let point = document.createElement('li');  // point variable defined with value of <li> element
+    point.textContent += myArrayTwo[x];   // The textContent method was used to assign the value of each iteration of myArrayTwo to the point variable which was already defined as the <li> element.
+    list.appendChild(point);   // the point node (child element) was then appended to the parent node which was the <ul> element.
+    console.log(point);
+}
+
 
