@@ -66,34 +66,47 @@ for (const x in myArrayTwo){
     console.log(point);
 }
 
-// a function which searches an object full of names and associated numbers. THe function will return the given name and number and exits the loop.
-function search(name, book){
-    for (let x of book){   // for...of loop to iterate through the array and return their values.
-   let arrayName = x.name;  // A variable with value of whichever iterated name has been selected
-   let arrayNumber = x.number;  // A variable with the corresponding number value of the name
-   if (arrayName === name){  // An if statement which compares the iterated name value, with the name which has been passed in as an argument.
-    para.textContent += `${arrayName} : ${arrayNumber}.`;  // Finally the value of arrayName and arrayNumber will be printed as text to the para variable, which is an empty paragraph.
-    } 
-   }
-  }
-    search('Chris', phonebook)  // the passed in values into the function
+// do while. A do...while should be used when the loop needs to be executed at least once. Else use a while loop.
+let v = 5;
+do {
+    v --;
+    console.log(v);
+} while (v > 1);
 
-// A do...while loop to execute a function and return all prime numbers under 500
-let i = 500;
-const para = document.createElement('p');
+// while loop
+let b = 5;
+while (b > 1){
+console.log(b);
+b--;}
 
-function isPrime(num) {
-  for(let i = 2; i < num; i++) {
-    if(num % i === 0) {
-      return false;
+// A shorter while loop. THe code will stop when the condition is false.
+let f = 5;
+while (f) console.log(f--);
+
+// for loop. The begin part has been skipped because we already have a variable "o" = 5;
+let o = 5;
+for (;o > 0; o--){
+}
+console.log(o)
+
+// for loop to output even numbers from 2 to 10
+for (let i = 2; i <= 10; i++){
+    if (i % 2 === 0){
+        alert(i)
     }
-  }
-return true;}
+}
 
-do {                                 // A do...while statement creates a loop that executes a specified statement until the test condition evaluates to false.
-if (isPrime(i)){                    // Here we are passing in (i which = 500), to our isPrime function which is returning true for every prime number under 500.
-  para.textContent += ` ${i}, `;}      // These results are then being printed in the para variable, which is an empty paragraph.
-i --;                             // We are decreasing the value of i by 1 in each iteration starting from 500
-} while (i>1)                    // This code will execute while i = 500 is less than 1, printing the prime numbers under 500.
+let j = 0;
+while (j < 3) {
+    alert(`number ${j} ! `);
+    ++j;
+}
 
+// do...while loop which prompts user to enter number greater than 100. If not then it repeats the loop and prompt
+let num;
+do {
+    num = prompt(`Enter a number greater than 100`, 0);
+} while (num < 100 && num)  // whilst the number the user enters is below 100 and num is null, without && num the loop would not stop if the user clicked cancel. Because if num is null then num < 100 is true.
+
+//
 
