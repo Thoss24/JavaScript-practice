@@ -66,4 +66,16 @@ for (const x in myArrayTwo){
     console.log(point);
 }
 
+// a function which searches an object full of names and associated numbers. THe function will return the given name and number and exits the loop.
+function search(name, book){
+    for (let x of book){   // for...of loop to iterate through the array and return their values.
+   let arrayName = x.name;  // A variable with value of whichever iterated name has been selected
+   let arrayNumber = x.number;  // A variable with the corresponding number value of the name
+   if (arrayName === name){  // An if statement which compares the iterated name value, with the name which has been passed in as an argument.
+    para.textContent += `${arrayName} : ${arrayNumber}.`;  // Finally the value of arrayName and arrayNumber will be printed as text to the para variable, which is an empty paragraph.
+    } 
+   }
+  }
+    search('Chris', phonebook)  // the passed in values into the function
+
 
