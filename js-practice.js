@@ -78,4 +78,22 @@ function search(name, book){
   }
     search('Chris', phonebook)  // the passed in values into the function
 
+// A do...while loop to execute a function and return all prime numbers under 500
+let i = 500;
+const para = document.createElement('p');
+
+function isPrime(num) {
+  for(let i = 2; i < num; i++) {
+    if(num % i === 0) {
+      return false;
+    }
+  }
+return true;}
+
+do {                                 // A do...while statement creates a loop that executes a specified statement until the test condition evaluates to false.
+if (isPrime(i)){                    // Here we are passing in (i which = 500), to our isPrime function which is returning true for every prime number under 500.
+  para.textContent += ` ${i}, `;}      // These results are then being printed in the para variable, which is an empty paragraph.
+i --;                             // We are decreasing the value of i by 1 in each iteration starting from 500
+} while (i>1)                    // This code will execute while i = 500 is less than 1, printing the prime numbers under 500.
+
 
