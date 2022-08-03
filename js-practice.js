@@ -108,5 +108,9 @@ do {
     num = prompt(`Enter a number greater than 100`, 0);
 } while (num < 100 && num)  // whilst the number the user enters is below 100 and num is null, without && num the loop would not stop if the user clicked cancel. Because if num is null then num < 100 is true.
 
-//
+// filter()
+function multipleVal(arr, ...num) {
+console.log(arr.filter((nums) => !num.includes(nums)));
 
+}
+multipleVal([2, 3, 4, 5, 6], 3, 4, 5)
