@@ -108,9 +108,32 @@ do {
     num = prompt(`Enter a number greater than 100`, 0);
 } while (num < 100 && num)  // whilst the number the user enters is below 100 and num is null, without && num the loop would not stop if the user clicked cancel. Because if num is null then num < 100 is true.
 
-// filter()
+// filter() method to remove arguments from array.
 function multipleVal(arr, ...num) {
-console.log(arr.filter((nums) => !num.includes(nums)));
+console.log(arr.filter((nums) => !num.includes(nums))); // filter to specify what elements pass the test provided by arrow function. i.e to not include the num argument in the array.
 
 }
-multipleVal([2, 3, 4, 5, 6], 3, 4, 5)
+multipleVal([2, 3, 4, 5, 6], 3, 4, 5) 
+
+// sum all
+const sumAll = function(a, b) {
+    let counter = 0;
+   let high = Math.max(a, b);
+   let low = Math.min(a, b);
+
+   for (let i = low; i <= high; i++){
+    counter += i
+    console.log(counter)  // quite simply creating a loop starting from min value and incrementing towards max value, adding the value of i and assigning it to a counter along the way.
+   }
+   
+};
+sumAll(1, 4)
+
+// leap year
+const leapYears = function(leap) {
+    if (leap % 4 === 0 && leap % 100 !== 0 || leap % 400 === 0){
+        return true
+    } else return false
+    
+    }; 
+    leapYears(2004) // a function which checks if the argument value is a leap year. A leap year is divisible by 4 but not divisible by 10. there are exceptions which are divisible by 400.
