@@ -137,3 +137,18 @@ const leapYears = function(leap) {
     
     }; 
     leapYears(2004) // a function which checks if the argument value is a leap year. A leap year is divisible by 4 but not divisible by 10. there are exceptions which are divisible by 400.
+
+    // convert to celsius and fahrenheit 
+    const ftoc = function(far) {
+        let celsius = (far - 32) * (5/9);
+        let roundedCel = Math.round(celsius * 10) / 10;
+        console.log(roundedCel)
+      };
+      ftoc(32)
+      
+      const ctof = function(cel) {
+      let fahrenheit = cel * (9/5) + 32;
+      let rounded = Math.round(fahrenheit * 10) / 10;
+      console.log(rounded)
+      };
+      ctof(0)  // this is the formula to convert fahrenheit to celsius and vice versa. Math.round is used to round to nearest decimal. num * 10 / 10 = 1.2. num * 100 / 100 = 1.23... and so on.
