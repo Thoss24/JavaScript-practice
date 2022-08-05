@@ -8,3 +8,16 @@ let blueHeaderOne = document.createElement('h3');
 blueHeaderOne.textContent = 'I\'m a blue h3!';
 blueHeaderOne.style.color = "blue";
 document.querySelector('body').appendChild(blueHeaderOne);
+
+// <div> element with black border and pink background
+let pinkBlackDiv = document.createElement('div');
+pinkBlackDiv.style.backgroundColor = 'pink';
+pinkBlackDiv.style.border = '1px solid black';
+pinkBlackDiv.style.padding = '50px'
+document.querySelector('body').appendChild(pinkBlackDiv);
+
+// <h1> element inside of <div>
+let imInDiv = document.createElement('h1');
+imInDiv.textContent = "I\'m in a div";
+document.querySelector('div').appendChild(imInDiv);
+
