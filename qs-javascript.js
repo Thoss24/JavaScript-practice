@@ -25,3 +25,7 @@ document.querySelector('div').appendChild(imInDiv);
 let meTooInDiv = document.createElement('p');
 meTooInDiv.textContent = 'ME TOO!';
 document.querySelector('div').appendChild(meTooInDiv);
+
+// button alert
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert('Hello World');
