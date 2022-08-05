@@ -26,15 +26,31 @@ let meTooInDiv = document.createElement('p');
 meTooInDiv.textContent = 'ME TOO!';
 document.querySelector('div').appendChild(meTooInDiv);
 
-// function for eventLIstener
+
+
+// Button which uses a named function createAlert, this is a good option if we want to reuse the same code for different events.
+const btnThree = document.querySelector('#btn-three');
+btnThree.addEventListener('click', createAlert);
+
+// named function for btnThree. Could easily be reused on other events.
 function createAlert() {
     alert("Hello World!")
+    btnThree.style.background = "blue";
 };
 
-// button alert
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', createAlert);
+// button with callback function from addEventLIstener event. Useful to gather more information about the event, (e) can be targeted to gather more info about event, shown below.
+const btn = document.querySelector('#btn');  
+btn.addEventListener('click', function(e){   // function(e) is a callback from addEventListener. The (e) references the event itself. For example (e.target) displays the target of the event in the console, which would be the button (btn).
+    console.log(e.target)
+    alert("Hello World!")
+    e.target.style.background = "blue";
+    console.log(e)
+});
 
-// second button
+// Another button which uses an arrow function. Achieves same result as using named function. Preferable if code is unlikely to be reused.
 const btnTwo = document.querySelector('#btn-two');
-btnTwo.addEventListener('click', () => {alert("Hello Again!");});
+btnTwo.addEventListener('click', () => {alert("Hello Again!");
+btnTwo.style.background = "blue";
+});
+
+
