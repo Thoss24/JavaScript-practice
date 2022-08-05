@@ -26,6 +26,15 @@ let meTooInDiv = document.createElement('p');
 meTooInDiv.textContent = 'ME TOO!';
 document.querySelector('div').appendChild(meTooInDiv);
 
+// function for eventLIstener
+function createAlert() {
+    alert("Hello World!")
+};
+
 // button alert
 const btn = document.querySelector('#btn');
-btn.onclick = () => alert('Hello World');
+btn.addEventListener('click', createAlert);
+
+// second button
+const btnTwo = document.querySelector('#btn-two');
+btnTwo.addEventListener('click', () => {alert("Hello Again!");});
