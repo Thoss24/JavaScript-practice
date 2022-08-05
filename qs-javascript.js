@@ -21,3 +21,7 @@ let imInDiv = document.createElement('h1');
 imInDiv.textContent = "I\'m in a div";
 document.querySelector('div').appendChild(imInDiv);
 
+// <p> element inside of <div>
+let meTooInDiv = document.createElement('p');
+meTooInDiv.textContent = 'ME TOO!';
+document.querySelector('div').appendChild(meTooInDiv);
