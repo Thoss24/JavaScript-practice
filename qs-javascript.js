@@ -53,4 +53,8 @@ btnTwo.addEventListener('click', () => {alert("Hello Again!");
 btnTwo.style.background = "blue";
 });
 
-
+// querySelectorAll used to create node-list of all buttons and add a click event and alert to show the buttons id, for each item (button) in the node-list.
+const buttons = document.querySelectorAll('button');
+console.log(buttons)
+buttons.forEach((item) => {item.addEventListener('click', () => {alert(item.id)});  // buttons.forEach((item)) is is used to iterate through each item (button) in the node-list. item represents the buttons in the node-list.
+});
