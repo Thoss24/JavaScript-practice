@@ -58,3 +58,17 @@ const buttons = document.querySelectorAll('button');
 console.log(buttons)
 buttons.forEach((item) => {item.addEventListener('click', () => {alert(item.id)});  // buttons.forEach((item)) is is used to iterate through each item (button) in the node-list. item represents the buttons in the node-list.
 });
+
+// Query selector to select all div elements, add a on click event that log's the elements class value.
+const divs = document.querySelectorAll('div');  // Query selector to select all "div" elements.
+
+function logText(e) {  // A function to log the class value of each "div" element on the page once it has been clicked.
+  console.log(this.classList.value);
+  e.stopPropagation();  // Stops bubbling. (bubbling is the order in which event handlers are called when elements are nested inside each-other). THis will no longer trigger events on the parent elements.
+}
+
+
+divs.forEach(div => div.addEventListener('click', logText, {  // An event to execute the logText function after a "div" element has been clicked.
+  capture: false,  // The function will be run on the way down instead of on the way up.
+  once: true  // Makes something only clickable once.
+}));
