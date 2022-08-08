@@ -72,3 +72,14 @@ divs.forEach(div => div.addEventListener('click', logText, {  // An event to exe
   capture: false,  // The function will be run on the way down instead of on the way up.
   once: true  // Makes something only clickable once.
 }));
+
+// rps ui code
+let buttonTwo = document.querySelectorAll('button');
+buttonTwo.forEach((item) => item.addEventListener('click', function(e) {
+  
+  const input = this.textContent;
+  
+  const cInput = 
+
+  
+}, ))
