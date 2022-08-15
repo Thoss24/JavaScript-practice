@@ -1,0 +1,10 @@
+.board {
+    display: grid;
+    height: 40vh;
+    width: 40vh;
+}
+
+.cells {
+    height: auto;
+    width: auto;
+}
