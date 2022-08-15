@@ -1,10 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.reset {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
 .board {
     display: grid;
     height: 40vh;
     width: 40vh;
+    outline: 2px solid black;
 }
 
 .cells {
     height: auto;
     width: auto;
+}
+
+.board > div {
+    outline: 1px solid black;
 }

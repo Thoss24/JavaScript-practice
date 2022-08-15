@@ -9,14 +9,14 @@
         <div class="container">
             <div><h1 class="title">Etch-a-Sketch</h1></div>
             <div class="board"></div>
-            <div>
-                <button>Black</button>  
-                <button>Eraser</button>
-                <button>Grey</button>
-                <button>Random</button>
-                <button>Reset board</button>
+            <div class="buttons">
+                <button onclick="selectColor('black')">Black</button>  
+                <button onclick="selectColor('white')">Eraser</button>
+                <button onclick="selectColor('grey')">Grey</button>
+                <button onclick="selectColor('random')">Random</button>
+                <button onclick="resetGrid()">Reset board</button>
             </div>
-            <div>
+            <div class="reset">
                 <input type="text" placeholder="Choose pixel size" onchange="changeSize(this.value)">
                 <button>Reset size</button>
             </div>
