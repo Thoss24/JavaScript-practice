@@ -32,3 +32,8 @@
 .board > div {
     outline: 1px solid black;
 }
+
+.color-mode {
+    display: flex;
+    margin: 10px;
+}
