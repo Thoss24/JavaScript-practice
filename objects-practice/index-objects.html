@@ -48,8 +48,32 @@
     for (let prop in person) {
         console.log(person[prop])
 
-        
     }
+
+    // constructor functions
+   function CreatePerson(name, age){
+    this.name = name;
+    this.age = age;
+    this.introduction = function () {console.log(`Hi, my name is ${this.name}`);}
+   }
+
+   const harry = new CreatePerson('Harry', 32)
+   harry.name;
+   harry.age;
+   harry.introduction();
+
+   for (let obj in harry){
+    console.log(harry[obj])
+   }
+
+   const becky = new CreatePerson('Becky', 28)
+   becky.introduction();
+   becky.name;
+   becky.age;
+
+   for (let obj in becky){
+    console.log(becky[obj])
+   }
 
     </script>
 </html>
