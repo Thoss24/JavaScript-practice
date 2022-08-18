@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+  </body>
+
+    <script>
+
+    const person = {
+        name: ['Bob', 'Smith'],
+        age: 32,
+        bio() {console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);},
+        introduceSelf() {console.log(`Hi! I'm ${this.name[0]}.`);}
+    };
+
+    const dataName = "height"
+    const dataValue = '1.80m'
+
+    person[dataName] = dataValue;
+
+    console.log(person[dataName])
+    
+    person.name.first = person.name[0]
+    person.name.last = person.name[1]
+
+    person['eyes'] = "Blue"
+
+    console.log(person['name']['last'])
+
+    for (let prop in person) {
+        console.log(person[prop])
+    }
+
+    </script>
+</html>
