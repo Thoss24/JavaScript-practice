@@ -24,7 +24,7 @@ const findTheOldestB = function(val) {
         
         const ageB = (b.yearOfDeath ? b.yearOfDeath : new Date().getFullYear()) - b.yearOfBirth; // same logic again for current value
         
-        return ageA > ageB ? a : b;  // if previous object (oldest person) is greater than current object (current oldest person) return that object.
+        return ageA > ageB ? a : b;  // return previous value if true (a) or current value (b) if false
     })
     
 };
