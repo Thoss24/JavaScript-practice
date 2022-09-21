@@ -1,4 +1,4 @@
-// in a function invocation the execution is the global object
+// THIS KEYWORD IN A FUNCTION INVOCATION the execution is the global object
 
 function sum(a, b) {
     console.log(this === window); // => true
@@ -19,3 +19,24 @@ console.log(this === window) // => true
 
 this.myString = "Hello World";
 console.log(window.myString) // Display's Hello World in console
+
+
+// THIS IN A FUNCTION INVOCATION, STRICT MODE
+// When strict mode is used it affects the execution context, making the this keyword to be undefined in a regular function invocation. The execution context is no longer the global object anymore.
+
+function multiply(a, b) {
+    'use strict'; // enable the strict mode
+    console.log(this === undefined); // => true
+    return a * b;
+}
+
+// Strict mode is active not only for in the current scope but all the inner scopes declared inside
+
+function execute() {
+    'use strict';
+
+    function concat(str1, str2) {
+        console.log(this === undefined); // => true
+        return str1 + str2;
+    }
+}
