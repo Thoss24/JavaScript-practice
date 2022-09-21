@@ -51,3 +51,24 @@ console.log(aBanana.showNameAndColor())  // The aBanana object inherits all the 
 // This is a clear example of how inheritance is implemented in JavaScript and the crucial role the prototype chain has in the process.
 
 
+// We can exclude inherited properties using the obj.hasOwnProperty() method, demonstrated below.
+
+let animal = {
+    eats: true
+};
+
+let rabbit = {
+    jumps: true,
+    __proto__:animal
+};
+
+for (let prop in rabbit) {
+    let isOwn = rabbit.hasOwnProperty(prop);
+
+    if (isOwn) {
+        alert(`Our: ${prop}`)
+    } else {
+        alert(`Inherited: ${prop}`)
+    }
+}
+
