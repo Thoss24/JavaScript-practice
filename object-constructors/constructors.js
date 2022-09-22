@@ -72,3 +72,18 @@ for (let prop in rabbit) {
     }
 }
 
+
+// if using constructors to make an object, it is best to define functions on the prototype of that object, meaning that a single instance will be shared between all Student objects.
+
+function Student(name, grade) {
+    this.name = name;
+    this.grade = grade;
+}
+
+Student.prototype.sayName = function() {
+    console.log(this.name)
+}
+
+Student.prototype.goToProm = function() {
+    console.log("go to prom?")
+}
