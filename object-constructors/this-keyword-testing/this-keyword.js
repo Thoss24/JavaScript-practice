@@ -40,3 +40,36 @@ function execute() {
         return str1 + str2;
     }
 }
+
+
+// the this keyword is not the same in an inner function as it is in the outer function
+// the context of the inner function (except arrow functions) depends only on it's own invocation type not the outer functions context
+// to make the this keyword have the desired value, the inner function context must be modified with indirect invocation (.call(), apply()) or create a bound function (bind())
+
+const numbers = {
+    numberA: 5, 
+    numberB: 10,
+
+    sum: function() {
+        console.log(this === numbers); // => true
+
+        function calculate() {
+            console.log(this === numbers); // => false
+            return this.numberA + this.numberB;
+        }
+
+        // const calculate = () => {              // an arrow function is another way of achieving this
+        //     console.log(this === numbers);
+        //     return this.numberA + this.numberB
+        // }
+
+        return calculate()   // return calculate.call(this) executes calculate() as usual, but also modifies the context to a value specified as the first parameter
+    }
+}
+numbers.sum() // NaN throws an error or type error due do the this keyword not having the desired effect in our inner function
+
+// to solve this issue, the calculate() function must execute wth the same context as the numbers.sum() method, to access this.numberA and this.numberB
+// one way to do this is to change the context of calculate.call(this) (an indirect invocation of a function)
+
+
+
