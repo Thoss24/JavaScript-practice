@@ -89,3 +89,30 @@ Student.prototype.goToProm = function() {
 }
 
 
+// The best way of setting the prototype of an object is to use "Object.create()". Which very simply returns a new object with the specified prototype and any additional properties one might want to add.
+
+function Student() {
+}
+
+Student.prototype.sayName = function() {
+    console.log(this.name)
+}
+
+function YearEight(name) {
+    this.name = name
+    this.year = 8
+}
+
+YearEight.prototype = Object.create(Student.prototype)
+
+const newYear = new YearEight("harry"); 
+newYear.sayName()  // newYear was assigned to be a constructor of YearEight function. Therefore, newYear inherited the prototype of YearEight, and YearEight was set the prototype of the Student function 
+console.log(newYear.year)  // Because newYear inherited prototype from YearEight and Student functions. newYear.year will log 8 even though it was not defined in the newYear = new YearEight constructor
+
+// if we wanted to edit something later on we would do so like this 
+
+YearEight.prototype.sayNameAndYear = function() {
+    console.log(this.name + " and i am in year " + this.year)
+}
+
+newYear.sayNameAndYear() // this would log the string "harry and i am in year 8" to the console.
