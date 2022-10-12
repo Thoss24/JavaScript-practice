@@ -15,7 +15,7 @@ console.log(user.fullName)
 console.log(user.name)
 
 
-// another example of using getters and setters
+// another example of using getters/setters
    
 const person = {
     name: "henry",
@@ -40,3 +40,24 @@ const person2 = {
 person2.lang = "swe";
 
 console.log(person2.language)
+
+// getters/setters can also be used to gain more control over operations, like so.
+
+let user2 = {
+    get name() {
+        return this._name;
+    },
+
+    set name(value) {
+        if (value.length < 4) {
+            alert("name too short");
+            return;
+        }
+        this._name = value
+    }
+};
+
+user2.name = "pete";
+console.log(user2.name)
+
+user2.name = ""; // alert: name too short
