@@ -61,3 +61,31 @@ user2.name = "pete";
 console.log(user2.name)
 
 user2.name = ""; // alert: name too short
+
+
+
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// let john = new User("John", new Date(1992, 6, 1));
+
+function User(name, birthday) {
+    this.name = name;
+    this.birthday = birthday;
+
+    Object.defineProperty(this, "age", {
+        get() {
+            let todayYear = new Date().getFullYear();
+            return todayYear - this.birthday.getFullYear();
+        }
+    })
+}
+
+let john = new User("John", new Date(1992, 6, 1));  
+
+console.log(john.birthday)
+
+// in this code, including the commented out code above. We have added a getter to the age property
