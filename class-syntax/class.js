@@ -143,3 +143,25 @@ Rectangle = class Rectangle2 {
 };
 
 console.log(Rectangle.name) // logs "Rectangle2"
+
+
+// prototype methods
+class Square {
+    constructor(height, width) {
+        this.height = height,
+        this.width = width
+    }
+
+    get area() {
+        return this.calcArea();
+    };
+
+    calcArea() {
+        return this.height * this.width
+    }
+
+};
+
+let size = new Square(20, 100);
+
+console.log(size.area) // logs "2000"
