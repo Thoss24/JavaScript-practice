@@ -165,3 +165,5 @@ class Square {
 let size = new Square(20, 100);
 
 console.log(size.area) // logs "2000"
+
+
