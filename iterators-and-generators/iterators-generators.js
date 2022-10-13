@@ -27,3 +27,15 @@ while (!result.done) {
 };
 
 console.log(result.value) // logs "5" this is because 5 is the total amount of values inside the result object
+
+
+// generator functions provide a better alternative to custom iterators like the above example
+
+function makeRangeIterator(start = 0, end = Infinity, step = 1) {
+    let iterationCounter = 0;
+    for (let i = start; i < end; i += step) {
+        iterationCounter++
+        return i
+    }
+    return iterationCounter
+} // The behavior of this code is identical to the example above, however this version is much easier to write and read
