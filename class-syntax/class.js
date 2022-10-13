@@ -121,3 +121,25 @@ let poly1 = new Polygon();
 
 console.log(poly1.name) // Poly
 
+
+// class expressions
+
+// unnamed
+let Rectangle = class {
+    constructor( height, width) {
+        this.height = height,
+        this.width = width
+    }
+};
+
+console.log(Rectangle.name) // logs "Rectangle"
+
+// named
+Rectangle = class Rectangle2 {
+    constructor(height, width) {
+        this.height = height,
+        this.width = width
+    }
+};
+
+console.log(Rectangle.name) // logs "Rectangle2"
