@@ -99,12 +99,25 @@ class MyCLassEx {
 
     }
 
-    method() {} // method
+    // method() {}                 // method
 
-    get something() {} // getter method
-    set something() {} // setter method
+    // get something() {}         // getter method
+    // set something() {}     // setter method
 
-    [symbol.iterator]() {} // method with computed name
+    // [symbol.iterator]() {}    // method with computed name
 }
 
 // MyClass is a function, while methods, getters and setters are written to MyClass.prototype
+
+
+
+class Polygon {
+    constructor() {
+        this.name = "Poly"
+    }
+};
+
+let poly1 = new Polygon();
+
+console.log(poly1.name) // Poly
+
