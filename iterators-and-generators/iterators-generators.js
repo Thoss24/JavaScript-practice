@@ -39,3 +39,31 @@ function makeRangeIterator(start = 0, end = Infinity, step = 1) {
     }
     return iterationCounter
 } // The behavior of this code is identical to the example above, however this version is much easier to write and read
+
+
+// iterables
+function* makeIterator() {
+    yield 1;
+    yield 2;
+}
+
+const itAgain = makeIterator();
+
+for (let item in itAgain) {
+    console.log(item)
+}
+
+console.log(itAgain[Symbol.iterator]() === itAgain); // true
+
+// This code demonstrates that generator(iterator) is an iterable object.
+// with the iterator method returning the method itself, 
+// with the itAgain object only being able to iterate once
+
+
+// A function/generator method returns a new iterator/generator object
+it[Symbol.iterator] = function* () {
+    yield 1;
+    yield 2;
+};
+// the iterator/generator object "it" can iterate many times, the opposite to above example which can iterate only once
+
