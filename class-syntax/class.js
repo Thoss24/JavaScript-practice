@@ -238,3 +238,25 @@ console.log(speak2()); // logs global object in non strict mode
 
 const eat2 = Animal2.eat2;
 console.log(eat2()); // logs global object in non strict mode
+
+
+
+// public field declarations
+// with the JavaScript field declaration syntax, the above example can be written as:
+class Circle {
+    height = 0;
+    width;
+
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    get() {
+        console.log(this.height) // logs "undefined" referencing private fields from outside the class is an error, as they can only be read or written from inside the class body
+        console.log("hello") // logs "hello"
+    }
+}
+
+let newClass = new Circle;
+newClass.get() 
