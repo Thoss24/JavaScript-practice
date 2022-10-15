@@ -167,3 +167,74 @@ let size = new Square(20, 100);
 console.log(size.area) // logs "2000"
 
 
+// The "static" keyword defines a static method or property for a class.
+// static methods are used to create utility functions for an application.
+// static properties are useful for caches, fixed-configuration, or any other data you don't need to be replaced across instances.
+
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    static displayName = "point";
+    static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+
+        return Math.hypot(dx, dy);
+    }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+p1.displayName // logs "undefined"
+p1.distance // logs "undefined"
+p2.displayName // logs "undefined"
+p2.distance // logs "undefined"
+
+console.log(Point.displayName) // logs "point"
+console.log(Point.distance(p1, p2)); // logs "7.0710678118654755"
+
+
+
+// Binding this with prototype and static methods
+// When a static or prototype method is called without a value for "this", the "this" value will be undefined inside the method.
+
+class Animal {
+    speak() {
+        return this;
+    }
+
+    static eat() {
+        return this;
+    }
+}
+
+const obj = new Animal() 
+console.log(obj.speak()) // logs the Animal object
+const speak = obj.speak;
+console.log(speak()) // logs "undefined"
+
+console.log(Animal.eat()) // logs the Animal class
+const eat = Animal.eat;
+console.log(eat()) // logs "undefined"
+
+function Animal2() {}
+
+
+// the code below re-writes the above code using traditional function based syntax in non-strict mode
+Animal2.prototype.speak2 = function () {
+    return this;
+}
+
+Animal2.eat2 = function () {
+    return this;
+}
+
+const obj2 = new Animal2();
+const speak2 = obj.speak;
+console.log(speak2()); // logs global object in non strict mode
+
+const eat2 = Animal2.eat2;
+console.log(eat2()); // logs global object in non strict mode
