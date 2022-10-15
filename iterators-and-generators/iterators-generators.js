@@ -115,3 +115,26 @@ console.log(gen().next()); // logs {value: "d" done: false}
 
 
 
+// Advanced generators.
+// Generators compute their yielded values on demand, which allows them to efficiently represent sequences that are expensive to compute.
+// The next() method also accepts a value, which can be used to modify the internal state of the generator.
+// A value passed to next() will be received by yield.
+
+function* fibonacci() {
+    let current = 0;
+    let next = 1;
+    while (true) {
+        const reset = yield current;
+        [current, next] = [next, next + current];
+        if (reset) {
+            current = 0;
+            next = 1;
+        }
+    }
+}
+
+const sequence = fibonacci();
+console.log(sequence.next().value); // logs 0
+console.log(sequence.next().value); // logs 1
+
+
