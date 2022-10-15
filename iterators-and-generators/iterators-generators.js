@@ -92,7 +92,26 @@ const myIterable = {
 
 for (const value of myIterable) {
     console.log(value) // logs 1 2 3
+};
+
+
+
+// Built-in iterables
+// String, Array, TypedArray, Map and Set are all built in iterables, because their prototype objects all have a Symbol.iterator method
+
+// some statements and expressions expect iterables, for example the "for ... of" loop and "yield"
+
+// for...of example
+for (let value of ["a", "b", "c"]) {
+    console.log(value)
 }
+
+// yield example
+function* gen() {
+    yield* ["d", "e", "f"];
+}
+
+console.log(gen().next()); // logs {value: "d" done: false}
 
 
 
