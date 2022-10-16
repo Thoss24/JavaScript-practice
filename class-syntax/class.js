@@ -285,5 +285,27 @@ class Dog extends Animal3 {  // the class "Dog", has been created as a child of 
     }
 }
 
-const dog = new Dog("Buck");
-dog.speak()  // logs "Buck barks"
+const dog = new Animal3("Buck");
+const dog2 = new Dog("Buck");
+dog.speak();  // logs "Buck makes a noise"
+dog2.speak(); // logs "Buck barks"
+
+// extends works the same for traditional functional based classes as well
+function Animal4(name) {
+    this.name = name;
+}
+
+Animal4.prototype.speak = function() {
+    console.log(`${this.name} makes a noise.`)
+};
+
+class Dog4 extends Animal4 {
+    speak() {
+        console.log(`${this.name} barks.`)
+    }
+}
+
+const d = new Dog4("Ralph");
+const dd = new Animal4("Ralph");
+d.speak() // logs "Ralph barks."
+dd.speak() // logs "Ralph makes a noise."
