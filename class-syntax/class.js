@@ -309,3 +309,21 @@ const d = new Dog4("Ralph");
 const dd = new Animal4("Ralph");
 d.speak() // logs "Ralph barks."
 dd.speak() // logs "Ralph makes a noise."
+
+// classes cannot extend regular (non-constructible) objects. If you want to inherit from a regular object, use Object.setPrototypeOf() instead.
+const Animal5 = {
+    speak() {
+        console.log(`${this.name} makes a noise.`)
+    }
+};
+
+class Dog5 {
+    constructor(name) {
+        this.name = name;
+    }
+};
+
+Object.setPrototypeOf(Dog5.prototype, Animal5); // if the prototype of Dog5 is not set to equal the prototype of Animal5, ddd.speak() will throw an error.
+
+const ddd = new Dog5("Jack")
+ddd.speak()
