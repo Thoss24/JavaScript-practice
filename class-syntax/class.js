@@ -31,6 +31,7 @@ console.log(User.prototype.sayHello) // display's code of this method
 console.log(Object.getOwnPropertyNames(User.prototype)) // [constructor, sayHello()]
 
 
+
 // class expression. Just like functions, classes can be defined inside another expression, passed around, returned, assigned etc.
 let User2 = class MyClass2 {
     sayHello() {
@@ -260,3 +261,29 @@ class Circle {
 
 let newClass = new Circle;
 newClass.get() 
+
+
+
+// the "extends" keyword, is used in class declarations or class expressions to create a class as a child of another class
+class Animal3 {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`)
+    }
+}
+
+class Dog extends Animal3 {  // the class "Dog", has been created as a child of "Animal3"
+    constructor(name) {
+        super(name)
+    }
+
+    speak() {
+        console.log(`${this.name} barks`)
+    }
+}
+
+const dog = new Dog("Buck");
+dog.speak()  // logs "Buck barks"
