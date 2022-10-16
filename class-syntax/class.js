@@ -327,3 +327,18 @@ Object.setPrototypeOf(Dog5.prototype, Animal5); // if the prototype of Dog5 is n
 
 const ddd = new Dog5("Jack")
 ddd.speak()
+
+
+
+// the "species" pattern enables you to override default constructors
+// for example, when using methods such as Array.prototype.map(), that returns the default constructor, you want these methods to return a parent, instead of the MyArray object. Symbol.species lets you do this.
+class MyArray extends Array {
+    // overwrite species to the parent Array constructor
+    static get [Symbol.species]() {return Array;}
+}
+
+const a = new MyArray(1, 2, 3);
+const mapped = a.map((x) => x * x);
+
+console.log(mapped instanceof MyArray); // false
+console.log(mapped instanceof Array); // true
