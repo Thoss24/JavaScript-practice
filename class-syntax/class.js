@@ -342,3 +342,28 @@ const mapped = a.map((x) => x * x);
 
 console.log(mapped instanceof MyArray); // false
 console.log(mapped instanceof Array); // true
+
+
+
+// the "Super" keyword
+// "Super" is used to call the constructor of it's parent class to access the parent's properties and methods.
+class Cat {
+    constructor(name) {
+        this.name = name
+    }
+
+    speakCat() {
+        console.log(`${this.name} squeaks.`)
+    }
+};
+
+class BigCat extends Cat {
+    speakCat() {
+        super.speakCat();
+        console.log(`${this.name} roars.`)
+    }
+}
+
+const newCat = new BigCat("blue");
+newCat.speakCat()// logs "blue squeaks" & "blue roars"
+
