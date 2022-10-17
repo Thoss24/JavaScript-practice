@@ -367,3 +367,31 @@ class BigCat extends Cat {
 const newCat = new BigCat("blue");
 newCat.speakCat()// logs "blue squeaks" & "blue roars"
 
+
+
+// mix-ins
+// in JavaScript we can only inherit from a single object. There can be only one [prototype] for an object. And a class may extend only one other class.
+// This can be limiting. Say we have a class "StreetSweeper" and a class "Bicycle", and we want to make their mix: a StreetSweepingBicycle
+// Or we have a class "User" and a class "EventEmitter", and we would like to add the functionality of "EventEmitter" to "User"
+// this is where mix-ins come in.
+// in other words, mix-ins provide methods that implement a certain behavior, but we do not use it alone, we use it to add behavior to other classes.
+let sayHiMixin = {
+    sayHi() {
+        console.log(`Hello ${this.name}.`)
+    },
+    sayBye() {
+        console.log(`Goodbye ${this.name}.`)
+    }
+};
+
+class UserMixin {
+    constructor(name) {
+        this.name = name
+    }
+};
+
+Object.assign(UserMixin.prototype, sayHiMixin); // assigning the prototype from UserMixin to sayHiMixin
+
+new UserMixin("Dude").sayHi(); // logs "Hello Dude"
+
+
