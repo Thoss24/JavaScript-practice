@@ -395,3 +395,15 @@ Object.assign(UserMixin.prototype, sayHiMixin); // assigning the prototype from 
 new UserMixin("Dude").sayHi(); // logs "Hello Dude"
 
 
+
+
+// constructor example
+class Shape {
+    constructor(fname, lname) {
+        this.fname = fname;
+        this.lname = lname;
+    }
+};
+
+let newShape = new Shape("John", "Doe");
+console.log(newShape.fname, newShape.lname) // logs "John Doe"
