@@ -20,6 +20,14 @@ module.exports = {
                 test: /\.(woff\woff2\eot\ttf\otf)$/i, // load fonts example
                 type: 'asset/resource',
             },
+            {
+                test: /\.(csv|tsv)$/i,
+                use: ['csv-loader'], // load CSV file
+            },
+            {
+                test: /\.(csv|tsv)$/i,
+                use: ['xml-loader'], // load XML (extensible markup language)
+            },
         ],
     },
 };

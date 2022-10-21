@@ -12,6 +12,9 @@ function component() {
     myIcon.src = Icon;
 
     element.appendChild(myIcon)
+
+    console.log(Data);
+    console.log(Notes) // should log the imported data from the xml and csv files
     
 
     return element
