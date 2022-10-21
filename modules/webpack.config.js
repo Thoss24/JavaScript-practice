@@ -10,14 +10,14 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: ['style-loader', 'css-loader'], // load CSS example
             },
             {
-                test: /\.(png|svg|jpg|gif)$/i,
+                test: /\.(png|svg|jpg|gif)$/i, // load images example
                 type: 'asset/resource',
             },
             {
-                test: /\.(woff\woff2\eot\ttf\otf)$/i,
+                test: /\.(woff\woff2\eot\ttf\otf)$/i, // load fonts example
                 type: 'asset/resource',
             },
         ],
