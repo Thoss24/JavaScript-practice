@@ -1,10 +1,12 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'development',  
     entry: {
         index: './src/index.js',
         print: './src/print.js',
     },
+    devtool: 'inline-source-map',  // A source map is used to make it easier to identify bugs, tracking down errors to their original location
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
