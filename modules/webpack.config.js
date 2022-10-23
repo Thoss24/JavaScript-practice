@@ -7,9 +7,15 @@ module.exports = {
         print: './src/print.js',
     },
     devtool: 'inline-source-map',  // A source map is used to make it easier to identify bugs, tracking down errors to their original location
+    devServer: {
+        static: './dist',
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    optimization: {
+        runtimeChunk: 'single',
     },
     module: {
         rules: [
