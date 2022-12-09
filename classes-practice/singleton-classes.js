@@ -1,0 +1,1 @@
+// A singleton class is structured in a way where only a single instance of that class can be made
