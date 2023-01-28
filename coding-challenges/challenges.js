@@ -22,6 +22,58 @@ class Exercises {
 
         console.log(result.slice(0, result.length - 1));
     }
+
+    static convertBoolean(b) {
+        b = 15
+        console.log(typeof(b.toString()))
+    }
+
+    static trimString(str, size) {
+        str = "Creating kata is fun";
+        let dots = "..."
+        size = 14
+        if (str.length > size) {
+            console.log(str.substr(0, size - 3) + dots)
+        };
+        if (str.length <= 3) {
+            console.log(str.substr(0, size) + dots)
+        };
+        if (str.length <= size) {
+            console.log(str)
+        }
+        console.log(str)
+    }
+
+    static toCamelCase(str) {
+        str = "hellotherefriend"
+
+        let regEx = /[-_]\w/ig;
+
+        // console.log(regEx)
+
+        // console.log(str.replace(regEx, (match) => {return match.charAt(1).toUpperCase()}))
+
+        console.log(str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase()));
+
+    }
+
+    static harshadNumber(n) {
+        n = 1458
+        let sum = n.toString().split('').map(Number).reduce((a, b) => {return a + b});
+        let sumReversed = sum.toString().split('').reverse().join('')
+
+        if (n % sum === 0 && sum * sumReversed === n) {
+            console.log("yes")
+        } else console.log("no")
+    }   
+
+    static testReduce() {
+        let num = [1,2,3,4,5]
+
+        console.log(num.reduce((a, b) => a + b))
+
+        // logs 15
+    }
 };
 
-Exercises.replaceWithAlphabet()
+Exercises.testReduce()
