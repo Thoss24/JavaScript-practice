@@ -74,6 +74,19 @@ class Exercises {
 
         // logs 15
     }
+
+    static sumOfIntegersInString(str) {
+
+        str = "The30quick20brown10fox1203jumps914ov3r1349the102l4zy dog"
+
+        let regEx = /[0-9]+/g
+
+        let numbers = str.match(regEx)
+
+        let sum = numbers.map(Number).reduce((a, b) => {return a + b});
+
+        console.log(sum)
+    }
 };
 
-Exercises.testReduce()
+Exercises.sumOfIntegersInString()
