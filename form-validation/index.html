@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../form-validation/style.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <!-- <form action="">
+        <div>
+            <label for="choose">Apple or Orange? (required)</label>
+            <input id="choose" name="i-like" required minlength="5" maxlength="6" pattern="[Aa]pple|[Oo]range"/>
+        </div>
+
+        <div>
+            <label for="number">How many?</label>
+            <input type="number" id="number" name="amount" value="1" min="1" max="10" />
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <form action="">
+        <label for="mail">Provide email address:</label>
+        <input type="email" id="mail" name="mail">
+        <button>Submit</button>
+    </form> -->
+
+    <form novalidate>
+        <p>
+            <label for="mail">
+                <span>Please enter an email address:</span>
+                <input type="email" id="mail" name="mail" required minlength="8" />
+                <span class="error" aria-live="polite"></span>
+            </label>
+        </p>
+        <button>Submit</button>
+    </form>
+
+
+    
+    
+    <script src="../form-validation/script.js"></script>
+</body>
+</html>

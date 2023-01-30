@@ -85,7 +85,7 @@ class Exercises {
 
         let sum = numbers.map(Number).reduce((a, b) => {return a + b});
 
-        console.log(sum)
+        console.log(Math.cbrt(8))
     }
 };
 
