@@ -87,6 +87,13 @@ class Exercises {
 
         console.log(Math.cbrt(8))
     }
+
+    static getSumOfDigits(integer) {
+        integer = 1337
+        let sum = integer.toString().split('').map(Number).reduce((a, b) => {return a + b});
+
+        console.log(sum)
+    }
 };
 
-Exercises.sumOfIntegersInString()
+Exercises.getSumOfDigits()
