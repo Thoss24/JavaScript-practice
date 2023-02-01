@@ -94,6 +94,32 @@ class Exercises {
 
         console.log(sum)
     }
+
+    static doCallBack(val) {
+        console.log(val)
+    }
+
+    static callBackFunction() {
+        let arr = ["one", "two", "three"]
+
+        arr.forEach(Exercises.doCallBack)
+    }
+
+    static returnLargest(n, arr) {
+        n = 3
+        arr = [5, 2, 3, 1, 4, 6, 7, 9, 8]
+
+        let sort = arr.sort((a, b) => {
+            return a - b
+        });
+
+        console.log(sort.slice(arr.length - n))
+
+        // If arrow function is not supplied, all non-undefined array elements are sorted by converting them to strings and comparing
+        //  strings in UTF-16 code units order. For example, "banana" comes before "cherry". In a numeric sort, 9 comes before 80,
+        //   but because numbers are converted to strings, "80" comes before "9" in the Unicode order.
+
+    }
 };
 
-Exercises.getSumOfDigits()
+Exercises.returnLargest()
