@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img src="" alt="">
+    <button type="button" onclick="sendFetch()">Fetch</button>
+    <input type="text" placeholder="...Search">
+    <p></p>
+    
+    <script>
+        function sendFetch() {
+        const image = document.querySelector('img')
+        fetch('https://api.giphy.com/v1/gifs/translate?api_key=ehdaxjK1TNmOHq9ZKEEmgYhfqDpcr7D2&s=cats', {mode:'cors'})
+        .then((response) => {
+            return response.json();
+        })
+        .then((response) => {
+            image.src = response.data.images.original.url
+        });
+    }
+
+        const p = document.querySelector('p')
+        fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15', {mode:'cors'})
+        .then((response) => {
+            return response.json()
+        })
+        .then((response) => {
+            // console.log(response)
+        })
+
+    </script>
+</body>
+</html>
