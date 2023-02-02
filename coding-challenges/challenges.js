@@ -120,6 +120,45 @@ class Exercises {
         //   but because numbers are converted to strings, "80" comes before "9" in the Unicode order.
 
     }
+
+    static currying() {
+        // a curry function which was created as a curry function
+        let dragon = 
+            name =>
+                size =>
+                    element =>
+                        name + ' is a ' +
+                        size + ' dragon that breathes ' +
+                        element + '!'
+
+        let fluffDragon = dragon('Fluff panda')
+        let tinyFluff = fluffDragon('tiny')
+        console.log(tinyFluff('fire'))
+
+        // a method which converts a normal function to a curry function
+        let dragonTwo = (name2, size2, element2) => {
+            name2 + ' is a ' +
+            size2 + ' dragon that breathes ' +
+            element2 + '!'
+        }
+
+        // dragonTwo = curry(dragonTwo)
+
+        // let fluffDragon2 = dragonTwo('Fluff panda')
+        // let tinyFluff2 = fluffDragon2('tiny')
+        // console.log(tinyFluff2('lightning'))
+    }
+
+     // a function which takes an array of integers as an argument. This function must return another function using its argument to multiply all elements in array
+    static multiplyAll(arr) {
+        arr = [1,2,3,4,5]
+        let newMultiply = (int) => {
+            int = 2
+            arr.map(x => x * int)
+        }
+       return newMultiply
+    }
+    
 };
 
-Exercises.returnLargest()
+Exercises.multiplyAll()
