@@ -9,36 +9,40 @@
 <body>
 
     <img src="" alt="">
-    <button type="button" onclick="sendFetch()">Fetch</button>
+    <button type="button" onclick="getGiph()">Fetch</button>
     <input type="text" placeholder="...Search">
     <p></p>
     
     <script>
-        function sendFetch() {
         const image = document.querySelector('img')
         const input = document.querySelector('input')
         const gifName = input.value
-        fetch(`https://api.giphy.com/v1/gifs/translate?api_key=ehdaxjK1TNmOHq9ZKEEmgYhfqDpcr7D2&s=${gifName}`, {mode:'cors'})
-        .then((response) => {
-            return response.json();
-        })
-        .then((response) => {
-            image.src = response.data.images.original.url
-            console.log(response.data.images.original)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
 
-        const p = document.querySelector('p')
-        fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15', {mode:'cors'})
-        .then((response) => {
-            return response.json()
-        })
-        .then((response) => {
-            // console.log(response)
-        })
+        // Function that fetches API using Promise
+        function sendFetch() {
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=ehdaxjK1TNmOHq9ZKEEmgYhfqDpcr7D2&s=${gifName}`, {mode:'cors'})
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                image.src = response.data.images.original.url
+                console.log(response.data.images.original)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+
+        // Asynchronous function fetching API using "await" instead of "Promise"
+        async function getGiph() {  
+            // async functions will always return a promise
+            const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=ehdaxjK1TNmOHq9ZKEEmgYhfqDpcr7D2&s=${gifName}`, {mode:'cors'});
+            // the await keyword litterally makes JavaScript wait until the promise settles and then returns its result
+            const gifData = await response.json();
+            // image.src = gifData.data.images.original.url
+            console.log(gifData.data.images.original.url)
+        }
+        getGiph()
 
     </script>
 </body>

@@ -158,7 +158,15 @@ class Exercises {
         }
        return newMultiply
     }
+
+    static digitalRoot() {
+        let num = 439867
+
+        let sum = num.toString().split('').map(Number).reduce((a, b) => {return a + b})
+
+        console.log(sum)
+    }
     
 };
 
-Exercises.multiplyAll()
+Exercises.digitalRoot()
