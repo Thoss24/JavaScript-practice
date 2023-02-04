@@ -166,7 +166,16 @@ class Exercises {
 
         console.log(sum)
     }
+
+    static nearestSqrt() {
+        let num = 111
+
+        console.log(Math.round(Math.sqrt(num)))  // square root of num, rounded to nearest whole number
+
+        console.log(Math.pow(Math.round(Math.sqrt(num)), 2))  // square root of num, rounded to nearest whole number to the power of 2 (num * num)
+
+    }
     
 };
 
-Exercises.digitalRoot()
+Exercises.nearestSqrt()
