@@ -175,6 +175,10 @@ class Exercises {
         console.log(Math.pow(Math.round(Math.sqrt(num)), 2))  // square root of num, rounded to nearest whole number to the power of 2 (num * num)
 
     }
+
+    static recursivePow(x, n) {
+        return (n == 1) ? x : x * this.recursivePow(x, n - 1)  
+    }
     
 };
 
