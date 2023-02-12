@@ -179,7 +179,50 @@ class Exercises {
     static recursivePow(x, n) {
         return (n == 1) ? x : x * this.recursivePow(x, n - 1)  
     }
+
+    static sumAllNum(n) {
+        // recursive
+        if (n <= 1) {
+            return n
+        } else console.log(n + this.sumAllNum(n - 1)) 
+        
+        // arithmetic progression formula
+        return n * (n + 1) / 2
+        
+    }
+
+    static factorial(n) {
+        return n <= 1 ? n : n * this.factorial(n - 1)
+    }
+
+    static fibonacci(n) {
+        return n <= 1 ? n : this.fibonacci(n - 1) + this.fibonacci(n - 2)
+    }
+
+    static printList(lst) {
+
+
+        // lst = {value: 1, next: {value: 2, next: {value: 3, next: {value:4, next:null}}}}
+
+        // console.log(Object.values(lst.next).forEach((val) => console.log(val.next)))
+        //console.log(lst.next.forEach((val) => console.log(val)))
+
+        console.log(lst.value)
+
+        if (lst.next) {
+            this.printList(lst.next)
+        }
+
+        // console.log(lst.value)
+
+        // if (lst.next) {
+        //     this.printList(lst.next)
+        // }
+
+
+        
+    }
     
 };
 
-Exercises.nearestSqrt()
+Exercises.printList({value: 1, next: {value: 2, next: {value: 3, next: {value:4, next:null}}}})
