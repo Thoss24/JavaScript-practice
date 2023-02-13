@@ -218,11 +218,123 @@ class Exercises {
         // if (lst.next) {
         //     this.printList(lst.next)
         // }
-
-
-        
     }
+
+    static recursiveCountdown(n) {
+        if (n === 0) {
+            console.log("Done")
+            return
+        } 
+        console.log(n)
+        this.recursiveCountdown(n - 1)
+    }
+
+    static sumRange(n, total = 0) {
+        if (n <= 0) return total
+        return this.sumRange(n - 1, total + n)
+    }
+
+    static printChildren(a) {
+        if (a.children.length === 0) return
+        a.children.forEach((child) => {
+            console.log(child.name)
+            this.printChildren(child)
+        })
+    }
+
+    static collatz(n) {
+
+        if (n === 1) 
+            return;
+
+        else if (n % 2 === 0) 
+            return 1 + this.collatz(n / 2);
+
+        else 
+            return 1 + this.collatz(3 * n + 1)
+
+    }
+
+    static sum(n, total = 0) {
+        if (n <= 0) return total
+        return sum(n - 1, total + n)
+    }
+    
+    static power(base, exp) {
+        if (exp === 0) return 1
+        return base * power(base, exp - 1)
+    }
+    
+    static factorial(n) {
+        if (n === 1) return 1
+        return n * factorial(n - 1)
+    }
+
+    static all(arr, func) {
+        
+         
+    }
+
+    static productOf(arr) {
+        if (arr.length <= 1) return arr
+        return arr.shift() * this.productOf(arr)
+    }
+
+    static contains(obj, val) {
+        for (let key in obj) {
+          if (typeof obj[key] === "object") {
+            return this.contains(obj[key], val) 
+          }
+          if (obj[key] === val) {
+            return true
+          }
+          
+        } 
+        return false
+    }
+
+    static totalIntegers(arr, length = 0) {
+       
+    }
+
     
 };
 
-Exercises.printList({value: 1, next: {value: 2, next: {value: 3, next: {value:4, next:null}}}})
+let arr = {
+    name: "john", 
+    children: [{
+        name: "Jim",
+        children: []
+    },
+    {
+        name: "Zoe", 
+        children: [
+            {name: "kyle", children: []},
+            {name: "sophia", children: []}
+        ]
+    }
+]
+}
+
+let obj = {
+    data: {
+        info: {
+            stuff: {
+                thing: {
+                    moreStuff: {
+                        magicNumber: 44,
+                        something: "foo",
+                    }
+                }
+            }
+        }
+    }
+}
+
+let multiArr = [[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]
+
+console.log(Exercises.totalIntegers(multiArr))
+
+
+
+
