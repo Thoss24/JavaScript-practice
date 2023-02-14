@@ -293,9 +293,43 @@ class Exercises {
         return false
     }
 
-    static totalIntegers(arr, length = 0) {
-       
+   static productOfArr(arr) {
+    if (arr.length === 0) return arr
+
+    let first = arr.shift()
+
+    return first * this.productOf(arr)
+   }
+   // search for nested object
+   static searchObj(list, item) {
+    for (let key in list) {
+        if (typeof list[key] === 'object') {
+            return this.searchObj(list[key], item)
+        } 
+        return list[key]
     }
+   }
+
+   static totInt(arr) {
+    if (arr.length === 0) return 0
+
+    let total = 0
+    let first = arr.shift()
+
+    if (Array.isArray(first)) {
+        total += this.totInt(first)
+    } 
+    if (Number.isInteger(first)) {
+        total += 1
+    }
+    return total + this.totInt(arr)
+   }
+
+   static replication(a, b) {
+    if (a <= 0) return []
+
+    return [b].concat(this.replication(a - 1, b))
+   }
 
     
 };
@@ -333,7 +367,7 @@ let obj = {
 
 let multiArr = [[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]
 
-console.log(Exercises.totalIntegers(multiArr))
+console.log(Exercises.replication(3, 5))
 
 
 
