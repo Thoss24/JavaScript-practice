@@ -331,8 +331,20 @@ class Exercises {
     return [b].concat(this.replication(a - 1, b))
    }
 
+   static mygcd(x, y) {
+    if (!y) return x
+    
+    return this.mygcd(y, x % y)
+   }
+
+   static strCount(str, letter) {
+        return str.split('').filter(x => x == letter)
+   }
+
     
 };
+
+console.log(Exercises.strCount("hello", "l").length)
 
 let arr = {
     name: "john", 
