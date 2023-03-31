@@ -341,10 +341,16 @@ class Exercises {
         return str.split('').filter(x => x == letter)
    }
 
+   static transformToObjects(arr) {
+    return arr.map((num) => {
+        return {val:num}
+    })
+   }
+
     
 };
 
-console.log(Exercises.strCount("hello", "l").length)
+console.log(Exercises.transformToObjects([1, 2, 3, 4]))
 
 let arr = {
     name: "john", 
