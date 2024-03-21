@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div style="display: flex; height: 100vh; justify-content: center; align-items: center;">
+        <div id="html_category"></div>
+        <div id="css_category"></div>
+        <div id="js_category"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "question 1",
+          category: "HTML",
+        },
+        {
+          question: "question 2",
+          category: "CSS",
+        },
+        {
+          question: "question 3",
+          category: "JS",
+        },
+      ];
+
+      const sortQuestionsByCategory = (questions) => {
+        const questionByCategory = {}
+        questions.forEach(question => {
+            if (question.hasOwnProperty(question.category)) {
+                questionByCategory[question.category].push(question)
+            } else {
+                questionByCategory[question.category] = [question]
+            }
+        })
+        return questionByCategory
+      }
+      const questionsByCategory = sortQuestionsByCategory(questions)
+
+      console.log(questionsByCategory)
+
+
+    </script>
+  </body>
+</html>

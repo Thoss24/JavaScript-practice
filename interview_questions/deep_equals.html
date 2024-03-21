@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      const deepEquals = (valueOne, valueTwo) => {
+
+        console.log(valueOne, valueTwo)
+        console.log("TEST")
+
+        if (typeof valueOne !== "object" && typeof valueTwo !== "object") {
+
+          if (Number.isNaN(valueOne) && Number.isNaN(valueTwo)) return false;
+
+          return valueOne === valueTwo;
+        
+        }
+
+        if (typeof valueOne !== typeof valueTwo) return false
+
+
+        if (Array.isArray(valueOne) && Array.isArray(valueTwo)) {
+          if (valueOne.length !== valueTwo.length) return false;
+
+          for (let i = 0; i < valueOne.length; i++) {
+            if (!deepEquals(valueOne[i], valueTwo[i])) return false;
+          }
+        }
+
+        const valueOneKeys = Object.keys(valueOne)
+        const valueTwoKeys = Object.keys(valueTwo)
+
+        if (valueOneKeys.length !== valueTwoKeys.length) return false;
+
+        for (let i = 0; i < valueOneKeys.length; i++) {
+            //if (valueOneKeys[i] !== valueTwoKeys[i]) return false;
+            const key = valueOneKeys[i]
+            const valueOneValue = valueOne[key]
+            const valueTwoValue = valueTwo[key]
+            console.log(valueOneValue, valueTwoValue)
+            if (!deepEquals(valueOneValue, valueTwoValue)) return false
+        }
+
+
+        return true;
+      };
+
+      console.log(
+        deepEquals(
+          {
+            name: "thomas",
+            age: 27,
+          },
+          {
+            name: "thomas",
+            age: 27,
+          }
+        )
+      );
+    </script>
+  </body>
+</html>
